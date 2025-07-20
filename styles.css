@@ -69,27 +69,44 @@ body {
   margin-bottom: 20px;
 }
 
-/* Responsive para móviles */
+/* Responsive para móviles (corregido) */
 @media (max-width: 768px) {
   #sidebar {
     position: relative;
     width: 100%;
     height: auto;
-    flex-direction: row;
-    overflow-x: auto;
     padding: 10px;
+    background-color: #2e2e2e;
+  }
+
+  #sidebar h2 {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+
+  #sidebar nav {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding-bottom: 10px;
   }
 
   #sidebar button {
-    flex: 1;
-    text-align: center;
-    font-size: 0.9em;
+    flex: none;
+    padding: 8px 12px;
     white-space: nowrap;
+    font-size: 0.9em;
+    background-color: #3b3b3b;
+    border-radius: 6px;
+  }
+
+  #sidebar button:hover {
+    background-color: #555;
   }
 
   #contenido {
-    margin-left: 0;
-    margin-top: 10px;
+    margin: 0;
     padding: 10px;
   }
 }
