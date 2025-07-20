@@ -61,13 +61,25 @@
   </main>
 
   <!-- Script básico para cambiar secciones -->
-  <script>
-    function mostrarSeccion(id) {
-      const secciones = document.querySelectorAll('.seccion');
-      secciones.forEach(sec => sec.style.display = 'none');
-      document.getElementById(id).style.display = 'block';
+<script>
+  function mostrarSeccion(id) {
+    const secciones = document.querySelectorAll('.seccion');
+    secciones.forEach(sec => sec.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+
+    // Si está en móvil, cerrar el menú
+    const menu = document.getElementById('menuContainer');
+    if (window.innerWidth <= 768) {
+      menu.classList.remove('active');
     }
-  </script>
+  }
+
+  function toggleMenu() {
+    const menu = document.getElementById('menuContainer');
+    menu.classList.toggle('active');
+  }
+</script>
+
 
 </body>
 </html>
