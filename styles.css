@@ -69,84 +69,43 @@ body {
   margin-bottom: 20px;
 }
 
-/* Responsive para móviles (corregido) */
+/* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
-  #sidebar {
-    position: relative;
-    width: 100%;
-    height: auto;
-    padding: 10px;
-    background-color: #2e2e2e;
-  }
-
-  #sidebar h2 {
-    text-align: center;
-    font-size: 1.2em;
-    margin-bottom: 10px;
-  }
-
-  #sidebar nav {
-    display: flex;
-    overflow-x: auto;
-    gap: 10px;
-    padding-bottom: 10px;
-  }
-
-  #sidebar button {
-    flex: none;
-    padding: 8px 12px;
-    white-space: nowrap;
-    font-size: 0.9em;
-    background-color: #3b3b3b;
-    border-radius: 6px;
-  }
-
-  #sidebar button:hover {
-    background-color: #555;
-  }
-
-  #contenido {
-    margin: 0;
-    padding: 10px;
-  }
-}
-/* Botón de menú (solo visible en móvil) */
-#menuToggle {
-  display: none;
-  background-color: #2e2e2e;
-  color: white;
-  border: none;
-  width: 100%;
-  padding: 15px;
-  font-size: 1.2em;
-  cursor: pointer;
-}
-
-/* Modo móvil */
-@media (max-width: 768px) {
+  /* Mostrar solo el botón de menú */
   #menuToggle {
     display: block;
+    background-color: #2e2e2e;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2em;
+    cursor: pointer;
+    position: relative;
+    z-index: 11;
   }
 
-  #menuContainer {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+  /* Oculta la barra lateral completamente */
+  #sidebar {
+    display: none;
+  }
+
+  /* Cuando el menú se activa, muestra el contenedor y la barra lateral como pantalla completa */
+  #menuContainer.active {
+    display: flex;
+    position: fixed;
+    inset: 0;
     z-index: 10;
     background-color: rgba(0, 0, 0, 0.85);
-    display: none;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 
-  #menuContainer.active {
+  #menuContainer.active #sidebar {
     display: flex;
-  }
-
-  #sidebar {
-    width: 90%;
+    flex-direction: column;
     background-color: #2e2e2e;
+    width: 90%;
     padding: 20px;
     border-radius: 8px;
     text-align: center;
@@ -155,18 +114,28 @@ body {
   #sidebar nav {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
   }
 
   #sidebar button {
     background-color: #444;
     padding: 12px;
     font-size: 1em;
+    color: white;
+    border: none;
+    border-radius: 6px;
   }
 
+  #sidebar button:hover {
+    background-color: #555;
+  }
+
+  /* El contenido principal ocupa el 100% de la pantalla */
   #contenido {
-    margin-left: 0;
-    padding: 10px;
+    margin: 0;
+    padding: 15px;
+    width: 100%;
   }
 }
+
 
