@@ -7,8 +7,10 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
+<!-- Botón de menú (solo visible en móviles) -->
+  <button id="menuToggle" onclick="toggleMenu()">☰ Menú</button>
   <!-- Barra lateral -->
+<div id="menuContainer">
   <aside id="sidebar">
     <h2>Abarrotes KaChu</h2>
     <nav>
@@ -20,6 +22,8 @@
       <button onclick="mostrarSeccion('tabla')">📋 Tabla de Productos</button>
     </nav>
   </aside>
+</div>
+
 
   <!-- Contenido principal -->
   <main id="contenido">
