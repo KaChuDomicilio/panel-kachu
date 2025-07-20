@@ -110,3 +110,63 @@ body {
     padding: 10px;
   }
 }
+/* Botón de menú (solo visible en móvil) */
+#menuToggle {
+  display: none;
+  background-color: #2e2e2e;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 15px;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+/* Modo móvil */
+@media (max-width: 768px) {
+  #menuToggle {
+    display: block;
+  }
+
+  #menuContainer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #menuContainer.active {
+    display: flex;
+  }
+
+  #sidebar {
+    width: 90%;
+    background-color: #2e2e2e;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  #sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #sidebar button {
+    background-color: #444;
+    padding: 12px;
+    font-size: 1em;
+  }
+
+  #contenido {
+    margin-left: 0;
+    padding: 10px;
+  }
+}
+
